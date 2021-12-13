@@ -38,7 +38,7 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
  - Implementacion de nuestra API.
     <p align="center"><img src="./assets/DataAcces1.PNG" width =550px> </p>
 
- - Utilizaremos Curl para hacer un llamado a nuestra  API  con el comando  
+ - Utilizaremos Curl para hacer un llamado a nuestra  API  con el comando.
 
 ```
     # curl -X GET "localhost:1880/get/topicLike/my*/ payloadLike/*/last/5" 
@@ -117,6 +117,18 @@ Las siguientes pruebas basadas en cURL muestran cómo se puede utilizar la API.
 
 <p align="center"><img src="./assets/deleteID1142.PNG" width =550px> </p>
 
-- Verificamos 
+Verificamos
+
 <p align="center"><img src="./assets/deleteID1142last.PNG" width =550px> </p>
 
+
+- Ahora implementaremos nuestra API para que pueda eliminar los datos completamente de nuestra base de datos.
+
+<p align="center"><img src="./assets/purge1.PNG" width =550px> </p>
+
+```
+   # curl -X GET "localhost:1880/purge/timestamp/id/1145"
+
+```
+
+<p align="center"><img src="./assets/purge2.PNG" width =550px> </p>
