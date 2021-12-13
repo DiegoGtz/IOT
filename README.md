@@ -8,17 +8,13 @@
 - [Node-Red](https://nodered.org/)
 - [Mosquitto](https://mosquitto.org/)
 
-
 ## Ejecutando el proyecto
- 
 ### Prerequisitos para correr desde docker
 
 - Tener instaldo Mysql
 - Tener phpMyAdmin
 - Mosquitto 
 - Node-Red
-
-
 #### Importar la base da datos
 
 En nuestro directorio phpMyAdmin importamos el archivos tseriesdb, que esta nuestra base de daots con la cual esta desarrollada esta actividad.
@@ -32,8 +28,13 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
 
 ### Distribución de nuestro Json Node-Red
 
- - En los flows Ejemplo1, Ejemplo2, Ejemplo3, Ejemplo4 estas distribuidos los ejemplos realizados en la actividad del Capitulo 7 .
+ - En los flows Ejemplo1, Ejemplo2, Ejemplo3, Ejemplo4 estas distribuidos los ejemplos realizados en la actividad del Capitulo7.
  - En los flows Chapter9 - Data Access API y Chapter9 - Data Deletion API.
+
+## Data Acces API 
+
+
+
 
 
 
