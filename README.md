@@ -33,9 +33,17 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
 
 ## Data Acces API 
 
+### Secuencia de API de solicitud de datos basada en condiciones 
+ - Implementacion de nuestra API.
+    <p align="center"><img src="./assets/DataAcces1.PNG" width =550px> </p>
 
+ - Utilizaremos Curl para hacer un llamado a nuestra  API  con el comando  
+```
+    # curl -X GET "localhost:1880/get/topicLike/my*/ payloadLike/*/last/5" 
+```
+- Esta consulta a nuestra API nos producirá todos los registros que coincidan con nuestros criterios y limitará la salida para el recuento de registros que solicitamos.
 
-
+    <p align="center"><img src="./assets/DataAcces1-Salida.PNG" width =550px> </p>
 
 
 
