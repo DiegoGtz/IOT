@@ -38,6 +38,7 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
     <p align="center"><img src="./assets/DataAcces1.PNG" width =550px> </p>
 
  - Utilizaremos Curl para hacer un llamado a nuestra  API  con el comando  
+
 ```
     # curl -X GET "localhost:1880/get/topicLike/my*/ payloadLike/*/last/5" 
 ```
@@ -45,5 +46,29 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
 
     <p align="center"><img src="./assets/DataAcces1-Salida.PNG" width =550px> </p>
 
+```
+    # curl -X GET "localhost:1880/get/topicLike/timesta*/payloadLike/*/last/2"
+```
 
+<p align="center"><img src="./assets/DataAcces2-Salida2.PNG" width =550px> </p>
 
+### Agregando filtros basados en tiempo
+
+- Implementacion de nuestra API. Ahora contaremos con tres nuevos puntos, uno para obtener registros sobre el tema especificado, uno para los registros creados antes de la marca de tiempo especificada y otro para los registros creados entre las dos marcas de tiempo.
+
+<p align="center"><img src="./assets/adding-Filters.PNG" width =550px> </p>
+
+-  A diferencia del ejemplo anterior esta parte buscaremos  marcas de tiempo con condiciones menores o mayores que un punto establecido.
+
+<p align="center"><img src="./assets/adding-Filters-consulta.PNG" width =550px> </p>
+
+- Las siguientes pruebas basadas en cURL muestran cómo se puede utilizar la API.
+```
+    # curl -X GET "localhost:1880/get/mytopic/last/7" 
+
+```
+<p align="center"><img src="./assets/adding-Filters1.PNG" width =550px> </p>
+```
+    # curl -X GET "localhost:1880/get/mytopic/before/1638142104.624/last/5"
+```
+<p align="center"><img src="./assets/adding-Filters2.PNG" width =550px> </p>
