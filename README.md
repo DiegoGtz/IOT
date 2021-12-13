@@ -27,6 +27,9 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
 
 <p align="center"><img src="./assets/node-red.PNG" width =550px> </p>
 
+- Tabla de nuestra base de datos. 
+<p align="center"><img src="./assets/basedatos.PNG" width =550px> </p>
+
 ### Distribución de nuestro Json Node-Red
 
  - En los flows Ejemplo1, Ejemplo2, Ejemplo3, Ejemplo4 estas distribuidos los ejemplos realizados en la actividad del Capitulo7.
