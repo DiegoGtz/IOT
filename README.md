@@ -22,13 +22,15 @@ En nuestro directorio phpMyAdmin importamos el archivos tseriesdb, que esta nues
 
 <p align="center"><img src="./assets/importar.PNG" width =550px> </p>
 
+- Tabla de nuestra base de datos. 
+<p align="center"><img src="./assets/basedatos.PNG" width =550px> </p>
+
 #### Importamos a Node-Red
 Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json se encuentra en la carpeta node-red-json.
 
 <p align="center"><img src="./assets/node-red.PNG" width =550px> </p>
 
-- Tabla de nuestra base de datos. 
-<p align="center"><img src="./assets/basedatos.PNG" width =550px> </p>
+
 
 ### Distribución de nuestro Json Node-Red
 
