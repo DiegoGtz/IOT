@@ -135,5 +135,3 @@ Verificamos
    # curl -X GET "localhost:1880/purge/timestamp/id/1145"
 
 ```
-
-<p align="center"><img src="./assets/purge2.PNG" width =250> </p>

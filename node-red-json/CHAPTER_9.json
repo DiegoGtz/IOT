@@ -830,5 +830,193 @@
         "x": 930,
         "y": 320,
         "wires": []
+    },
+    {
+        "id": "245cf3f414829925",
+        "type": "http in",
+        "z": "f81f73e38c2da03b",
+        "name": "",
+        "url": "/purge/:topic/id/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 640,
+        "wires": [
+            [
+                "8c46e60455cea641"
+            ]
+        ]
+    },
+    {
+        "id": "1ce3fe018258675e",
+        "type": "http in",
+        "z": "f81f73e38c2da03b",
+        "name": "",
+        "url": "/purge/:topic",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 700,
+        "wires": [
+            [
+                "012356841387b746"
+            ]
+        ]
+    },
+    {
+        "id": "d4cbf60765372504",
+        "type": "http in",
+        "z": "f81f73e38c2da03b",
+        "name": "",
+        "url": "/purge/:topic/last/:count",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 780,
+        "wires": [
+            [
+                "be78093bf8515ff6"
+            ]
+        ]
+    },
+    {
+        "id": "efe1aabaa19ccfea",
+        "type": "http in",
+        "z": "f81f73e38c2da03b",
+        "name": "",
+        "url": "/purge/:topic/first/:count",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 840,
+        "wires": [
+            [
+                "79a84b3db94670b0"
+            ]
+        ]
+    },
+    {
+        "id": "8c46e60455cea641",
+        "type": "function",
+        "z": "f81f73e38c2da03b",
+        "name": "create querry",
+        "func": "if(!msg.req.authFilter) \n    msg.req.authFilter = 1; \nmsg.topic = \"DELETE thingData\" + \n \" WHERE deleted=1\" + \n \" AND\" + \n \" topic='\" + msg.req.params.topic + \"'\" +  \" AND (\" + msg.req.authFilter + \")\" +  \" AND id=\" + msg.req.params.id + \";\"; \nreturn msg; \n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 640,
+        "wires": [
+            [
+                "bcd90a570a0a8041"
+            ]
+        ]
+    },
+    {
+        "id": "012356841387b746",
+        "type": "function",
+        "z": "f81f73e38c2da03b",
+        "name": "create querry",
+        "func": "if(!msg.req.authFilter) \n    msg.req.authFilter = 1; \nmsg.topic = \"DELETE thingData\" + \n \" WHERE deleted=1\" + \n \" AND\" + \n \" topic='\" + msg.req.params.topic + \"'\" +  \" AND (\" + msg.req.authFilter + \");\"; \nreturn msg; \n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 700,
+        "wires": [
+            [
+                "bcd90a570a0a8041"
+            ]
+        ]
+    },
+    {
+        "id": "be78093bf8515ff6",
+        "type": "function",
+        "z": "f81f73e38c2da03b",
+        "name": "create querry",
+        "func": "// if required record count is not specified \n// set default to 1 \nif(!msg.req.params.count) \n    msg.req.params.count = 1; \n// if no authentication filter defined or available // set the default value as 1 \nif(!msg.req.authFilter) \n    msg.req.authFilter = 1; \n    \nmsg.topic = \"DELETE thingData\" + \n    \" WHERE deleted=1\" + \n    \" AND\" + \n    \" topic='\" + msg.req.params.topic + \"'\" +  \" AND (\" + msg.req.authFilter + \")\" +  \" ORDER BY id DESC LIMIT \" + msg.req.params.count +  \";\"; \nreturn msg; \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 780,
+        "wires": [
+            [
+                "bcd90a570a0a8041"
+            ]
+        ]
+    },
+    {
+        "id": "79a84b3db94670b0",
+        "type": "function",
+        "z": "f81f73e38c2da03b",
+        "name": "create querry",
+        "func": "// if required record count is not specified \n// set default to 1 \nif(!msg.req.params.count) \n    msg.req.params.count = 1; \n// if no authentication filter defined or available // set the default value as 1 \nif(!msg.req.authFilter) \n    msg.req.authFilter = 1; \n    \nmsg.topic = \"DELETE thingData\" + \n    \" WHERE deleted=1\" + \n    \" AND\" + \n    \" topic='\" + msg.req.params.topic + \"'\" +  \" AND (\" + msg.req.authFilter + \")\" +  \" ORDER BY id DESC LIMIT \" + msg.req.params.count +  \";\"; \nreturn msg; \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 840,
+        "wires": [
+            [
+                "bcd90a570a0a8041"
+            ]
+        ]
+    },
+    {
+        "id": "bcd90a570a0a8041",
+        "type": "mysql",
+        "z": "f81f73e38c2da03b",
+        "mydb": "7c72f9d470199965",
+        "name": "",
+        "x": 600,
+        "y": 740,
+        "wires": [
+            [
+                "ed3f506c5ba9e1c3"
+            ]
+        ]
+    },
+    {
+        "id": "ed3f506c5ba9e1c3",
+        "type": "function",
+        "z": "f81f73e38c2da03b",
+        "name": "prepare response",
+        "func": "// Prepare response \nmsg.payload = { \n    \"found\": msg.payload.affectedRows, \n    \"changed\": msg.payload.changedRows, \n}; \nreturn msg; \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 740,
+        "wires": [
+            [
+                "6a134ac322f8bf31"
+            ]
+        ]
+    },
+    {
+        "id": "6a134ac322f8bf31",
+        "type": "http response",
+        "z": "f81f73e38c2da03b",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 930,
+        "y": 660,
+        "wires": []
     }
 ]
