@@ -17,3 +17,18 @@
 - Tener phpMyAdmin
 - Mosquitto 
 - Node-Red
+
+
+#### Importar la base da datos
+
+En nuestro directorio phpMyAdmin importamos el archivos tseriesdb, que esta nuestra base de daots con la cual esta desarrollada esta actividad.
+<p align="center"><img src="./assets/importar.PNG" width =550px> </p>
+
+#### Importamos a Node-Red
+Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json se encuentra en la carpeta node-red-json.
+
+<p align="center"><img src="./assets/node-red.PNG" width =550px> </p>
+
+#### Distribución de nuestro Json Node-Red
+
+En los flows Ejemplo1, Ejemplo2, Ejemplo3, Ejemplo4 estasn distribuidos los ejemplos realizados en la actividad del Capitulo 7  
