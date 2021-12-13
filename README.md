@@ -15,6 +15,7 @@
 - Tener phpMyAdmin
 - Mosquitto 
 - Node-Red
+
 #### Importar la base da datos
 
 En nuestro directorio phpMyAdmin importamos el archivos tseriesdb, que esta nuestra base de daots con la cual esta desarrollada esta actividad.
@@ -63,12 +64,23 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
 <p align="center"><img src="./assets/adding-Filters-consulta.PNG" width =550px> </p>
 
 - Las siguientes pruebas basadas en cURL muestran cómo se puede utilizar la API.
+
 ```
     # curl -X GET "localhost:1880/get/mytopic/last/7" 
 
 ```
 <p align="center"><img src="./assets/adding-Filters1.PNG" width =550px> </p>
+
 ```
     # curl -X GET "localhost:1880/get/mytopic/before/1638142104.624/last/5"
 ```
 <p align="center"><img src="./assets/adding-Filters2.PNG" width =550px> </p>
+
+```
+   # curl -X GET "localhots:1880/get/mytopic/during/1638141794708/168141854735/last/7"
+
+```
+
+<p align="center"><img src="./assets/adding-Filters3.PNG" width =550px> </p>
+
+## API de eliminación de datos
