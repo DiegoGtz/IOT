@@ -1,4 +1,4 @@
-# IOT-2daActividad
+# Practica - Capitulo 9 
  En esta practica se desarrollo el ejercicio propuesto en el Capítulo 9 (Páginas 137 - 152), correspondiente a Data Access API and Data Deletion API del libro Build Your Own IoT Platform.
 
 ## Participantes 
@@ -131,4 +131,4 @@ Verificamos
 
 ```
 
-<p align="center"><img src="./assets/purge2.PNG" width =550px> </p>
+<p align="center"><img src="./assets/purge2.PNG" width =250> </p>
