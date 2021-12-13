@@ -103,7 +103,7 @@ Las siguientes pruebas basadas en cURL muestran cómo se puede utilizar la API.
 
 - Primero solicitaremos  las 5 ultimas consultas.
 ```
-   # curl -X GET "localhost:1880/get/timestamp/last/5"
+   # curl -X GET "localhost:1880/get/timestamp/last/7"
 
 ```
 <p align="center"><img src="./assets/deleteIDlast.PNG" width =550px> </p>
@@ -119,3 +119,4 @@ Las siguientes pruebas basadas en cURL muestran cómo se puede utilizar la API.
 
 - Verificamos 
 <p align="center"><img src="./assets/deleteID1142last.PNG" width =550px> </p>
+
