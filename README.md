@@ -84,3 +84,38 @@ Ahora vamos importar nuestro json a nuestra plantilla en Node-Red. Nuestro json 
 <p align="center"><img src="./assets/adding-Filters3.PNG" width =550px> </p>
 
 ## API de eliminación de datos
+
+En este ejemplo se busca eliminar datos de nuestra base de datos segun algunas condiciones.
+
+- Implementacion de nuestro API.
+
+<p align="center"><img src="./assets/API-DELETE.PNG" width =550px> </p>
+
+- Eliminar un dato de acuerdo al ID ingresado.
+
+<p align="center"><img src="./assets/deleteID.PNG" width =550px> </p>
+
+- Eliminar datos masivamente 
+
+<p align="center"><img src="./assets/deleteID2.PNG" width =550px> </p>
+
+Las siguientes pruebas basadas en cURL muestran cómo se puede utilizar la API.
+
+- Primero solicitaremos  las 5 ultimas consultas.
+```
+   # curl -X GET "localhost:1880/get/timestamp/last/5"
+
+```
+<p align="center"><img src="./assets/deleteIDlast.PNG" width =550px> </p>
+
+- Seguidamente eliminaremos uno   nuestros datos vistos en el punto anterior utilizando el ID. 
+
+```
+   # curl -X GET "localhost:1880/delete/timestamp/id/1142"
+
+```
+
+<p align="center"><img src="./assets/deleteID1142.PNG" width =550px> </p>
+
+- Verificamos 
+<p align="center"><img src="./assets/deleteID1142last.PNG" width =550px> </p>
